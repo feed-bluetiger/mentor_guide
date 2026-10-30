@@ -61,7 +61,7 @@
         <div class="part-hero">
           <div class="ph-top">
             <span class="ph-num">SETUP</span>
-            <span class="ph-when">개강 전주 수요일 전까지 · ⏰ 약 15분</span>
+            <span class="ph-when">개강 전주 수요일 전까지 · ⏰ 약 10분</span>
           </div>
           <h2>멘토링 녹화 준비</h2>
           <p class="ph-desc">
@@ -98,10 +98,8 @@
             <div class="timeline compact">
               <div class="tl-item"><div class="tl-num">1</div><div class="tl-body"><div class="tl-title">OBS Studio 설치</div></div></div>
               <div class="tl-item"><div class="tl-num">2</div><div class="tl-body"><div class="tl-title">전용 프로파일 가져오기</div></div></div>
-              <div class="tl-item"><div class="tl-num">3</div><div class="tl-body"><div class="tl-title">화면 캡처 소스 추가</div></div></div>
-              <div class="tl-item"><div class="tl-num">4</div><div class="tl-body"><div class="tl-title">오디오 세팅 (목소리 누락 방지)</div></div></div>
-              <div class="tl-item"><div class="tl-num">5</div><div class="tl-body"><div class="tl-title">BT 녹화 도우미 설치·연결</div></div></div>
-              <div class="tl-item"><div class="tl-num">6</div><div class="tl-body"><div class="tl-title">🎯 테스트 녹화 → <a href="step-3-missions.html#mission-1">STEP 3 · MISSION 1</a></div></div></div>
+              <div class="tl-item"><div class="tl-num">3</div><div class="tl-body"><div class="tl-title">BT 녹화 도우미 설치·연결</div></div></div>
+              <div class="tl-item"><div class="tl-num">4</div><div class="tl-body"><div class="tl-title">🎯 테스트 녹화 → <a href="step-3-missions.html#mission-1">STEP 3 · MISSION 1</a></div></div></div>
             </div>
           </div>
         </div>
@@ -147,56 +145,8 @@
             </ul>
             <div class="alert alert-info">
               <span class="alert-icon">💡</span>
-              <span>위 설정으로 1080p/30fps, 고품질 녹화가 모두 설정됩니다. 녹화 저장 위치는 도우미가 알아서 정하니 바꾸지 않으셔도 됩니다.</span>
+              <span>위 설정으로 1080p/30fps, 고품질 녹화가 모두 설정됩니다.<br>화면·마이크·컴퓨터 소리 연결과 녹화 저장 위치는 다음 단계의 도우미가 알아서 맞추니 따로 손대지 않으셔도 됩니다.</span>
             </div>
-          </div>
-        </div>
-
-        <div class="step-card">
-          <div class="step-body">
-            <h3>3단계 · 화면 캡처 소스 추가</h3>
-            <ul class="bullet-list">
-              <li><span class="li-main">OBS '소스 목록(Sources)' 패널 하단의 더하기 버튼(+) 클릭 &gt; 화면 캡처(디스플레이 캡처) 선택</span></li>
-              <li><span class="li-main">디스플레이 캡처 &gt; 디스코드가 표시될 디스플레이 선택</span></li>
-              <li><span class="li-main">OBS 하단 오디오 믹서에서 동작 확인</span>
-                <ul>
-                  <li>'데스크톱 오디오' : 디스코드 소리 재생 시 초록색 바가 움직이면 완료</li>
-                  <li>'마이크' : 말할 때 초록색 바가 움직이면 완료</li>
-                </ul>
-              </li>
-            </ul>
-            <div class="alert alert-info">
-              <span class="alert-icon">💡</span>
-              <span>캡처 화면이 잘리거나 크기가 맞지 않는 경우:<br>소스 우클릭 &gt; 변환 &gt; '화면에 맞추기'를 선택하면 전체 화면 크기에 맞게 조정됩니다.</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="step-card">
-          <div class="step-body">
-            <h3 id="audio-setup">4단계 · 오디오 세팅 (목소리 누락 방지)</h3>
-            <div style="font-weight:700;font-size:13px;color:var(--accent);margin-bottom:8px;">① 마이크 장치 지정</div>
-            <ul class="bullet-list" style="margin-bottom:18px;">
-              <li><span class="li-main">OBS 오디오 믹서의 <strong>'마이크/Aux'</strong> 텍스트 클릭 &gt; 속성 &gt; 장치</span></li>
-              <li><span class="li-main">'기본 장치' 대신 <strong>실제 사용하는 마이크</strong>를 직접 지정합니다.</span>
-                <ul>
-                  <li>'기본 장치'는 엉뚱한 장치를 잡아 소리가 아예 들어오지 않을 수 있습니다.</li>
-                  <li>여기서 지정한 마이크는 <strong>디스코드에서 쓰는 마이크와 같아야</strong> 합니다.</li>
-                </ul>
-              </li>
-            </ul>
-
-            <div style="font-weight:700;font-size:13px;color:var(--accent);margin-bottom:8px;">② 오디오 모니터링 끄기</div>
-            <ul class="bullet-list">
-              <li><span class="li-main">오디오 믹서 하단 'Options' &gt; <strong>오디오 고급 설정</strong> &gt; '오디오 모니터링'</span></li>
-              <li><span class="li-main">마이크/Aux와 데스크톱 오디오 둘 다 <strong>'모니터링 끔'</strong>으로 설정합니다.</span></li>
-            </ul>
-
-            <div style="font-weight:700;font-size:13px;color:var(--accent);margin:22px 0 8px;">이럴 땐 이렇게</div>
-            <ul class="bullet-list">
-              <li><span class="li-main"><strong>녹화본에 내 목소리가 안 담긴 경우</strong> : 마이크 장치를 직접 지정하고, 모니터링을 '끔'으로 설정</span></li>
-              <li><span class="li-main"><strong>소리가 울리는 경우(에코)</strong> : 모니터링을 '끔'으로 설정</span></li>
-            </ul>
           </div>
         </div>
 
@@ -207,7 +157,7 @@
 
         <div class="step-card toggle-card" data-os="windows">
           <div class="toggle-head" onclick="toggleCard(this)" role="button" tabindex="0" aria-expanded="false">
-            <h3 id="recorder-windows">🖥 5단계 · BT 녹화 도우미 설치 (Windows)
+            <h3 id="recorder-windows">🖥 3단계 · BT 녹화 도우미 설치 (Windows)
               <span class="th-hint">설치 파일을 실행하면 끝납니다</span>
             </h3>
             <span class="th-icon">+</span>
@@ -230,7 +180,7 @@
 
         <div class="step-card toggle-card" data-os="mac">
           <div class="toggle-head" onclick="toggleCard(this)" role="button" tabindex="0" aria-expanded="false">
-            <h3 id="recorder-mac">🍎 5단계 · BT 녹화 도우미 설치 (macOS)
+            <h3 id="recorder-mac">🍎 3단계 · BT 녹화 도우미 설치 (macOS)
               <span class="th-hint">터미널에 한 줄 붙여 넣으면 끝납니다</span>
             </h3>
             <span class="th-icon">+</span>
@@ -253,7 +203,7 @@
 
         <div class="step-card">
           <div class="step-body">
-            <h3 id="recorder-connect">5단계 이어서 · 도우미 연결하기 (공통)</h3>
+            <h3 id="recorder-connect">3단계 이어서 · 도우미 연결하기 (공통)</h3>
             <ul class="bullet-list">
               <li><span class="li-main">도우미 창에 멘토 포털에 로그인할 때 쓰는 <strong>강사코드와 이름</strong>을 넣고 [연결하기]를 누릅니다.</span>
                 <ul>
@@ -295,6 +245,34 @@
                 <br>업로드가 끝날 때까지 PC를 몇 분 켜 두시는 게 좋습니다. 꺼 버렸다면 다음에 켤 때 이어서 올라갑니다.</span>
             </div>
             <img src="recorder-popup-record.png" alt="녹화가 안 되고 있다는 빨간 안내 창" class="step-img" style="margin-top:12px;max-width:420px;">
+          </div>
+        </div>
+
+        <div class="step-card toggle-card">
+          <div class="toggle-head" onclick="toggleCard(this)" role="button" tabindex="0" aria-expanded="false">
+            <h3 id="audio-setup">녹화에 소리가 안 담길 때
+              <span class="th-hint">테스트 녹화에서 '조용함'이 나오면 확인합니다</span>
+            </h3>
+            <span class="th-icon">+</span>
+          </div>
+          <div class="toggle-body">
+          <div class="step-body">
+            <p style="font-size:13px;color:var(--text3);margin-bottom:14px;">도우미가 화면·마이크·컴퓨터 소리를 자동으로 연결하지만, 마이크가 여러 개이거나 소리가 울리면 OBS에서 직접 맞춰 주세요.</p>
+            <div style="font-weight:700;font-size:13px;color:var(--accent);margin-bottom:8px;">① 마이크 장치 지정 (내 목소리가 안 담길 때)</div>
+            <ul class="bullet-list" style="margin-bottom:18px;">
+              <li><span class="li-main">OBS 오디오 믹서의 <strong>'마이크/Aux'</strong> 텍스트 클릭 &gt; 속성 &gt; 장치</span></li>
+              <li><span class="li-main">'기본 장치' 대신 <strong>디스코드에서 쓰는 마이크</strong>를 직접 지정합니다.</span></li>
+            </ul>
+            <div style="font-weight:700;font-size:13px;color:var(--accent);margin-bottom:8px;">② 오디오 모니터링 끄기 (소리가 울릴 때)</div>
+            <ul class="bullet-list">
+              <li><span class="li-main">오디오 믹서 하단 'Options' &gt; <strong>오디오 고급 설정</strong> &gt; '오디오 모니터링'</span></li>
+              <li><span class="li-main">마이크/Aux와 데스크톱 오디오 둘 다 <strong>'모니터링 끔'</strong>으로 설정합니다.</span></li>
+            </ul>
+            <div class="alert alert-info" style="margin-top:14px;">
+              <span class="alert-icon">💡</span>
+              <span>맞춘 뒤 도우미에서 [테스트 녹화 (10초)]를 다시 눌러 확인해 주세요.</span>
+            </div>
+          </div>
           </div>
         </div>
 
