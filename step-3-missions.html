@@ -60,7 +60,7 @@
         <div class="mission-summary">
           <a class="ms-card" href="#mission-1">
             <span class="ms-num">MISSION 1</span>
-            <span class="ms-title">자동 녹화 테스트 제출</span>
+            <span class="ms-title">테스트 녹화</span>
             <span class="ms-when">개강 전주 수요일까지</span>
           </a>
           <a class="ms-card" href="#mission-2">
@@ -83,8 +83,8 @@
             <div class="tl-item">
               <div class="tl-num">전주 수</div>
               <div class="tl-body">
-                <div class="tl-title">녹화 테스트 제출 완료</div>
-                <div class="tl-desc"><strong>개강 전주 수요일까지</strong> <a href="#mission-1">MISSION 1</a> 완료 + 예약 시간 원복 확인</div>
+                <div class="tl-title">테스트 녹화 완료</div>
+                <div class="tl-desc"><strong>개강 전주 수요일까지</strong> <a href="#mission-1">MISSION 1</a> 완료 (도우미에서 버튼 하나)</div>
               </div>
             </div>
             <div class="tl-item">
@@ -114,7 +114,7 @@
     </section>
 
     <!-- ==========================================================
-         MISSION 1 — 자동 녹화 테스트 제출
+         MISSION 1 — 테스트 녹화
     ========================================================== -->
     <section class="doc-section" id="mission-1">
       <div class="container">
@@ -122,18 +122,13 @@
         <div class="part-hero">
           <div class="ph-top">
             <span class="ph-num">MISSION 1</span>
-            <span class="ph-when">개강 전주 수요일까지 · 최초 1회</span>
+            <span class="ph-when">개강 전주 수요일까지 · 최초 1회 · 1분</span>
           </div>
-          <h2>자동 녹화 테스트 제출</h2>
+          <h2>테스트 녹화</h2>
           <p class="ph-desc">
-            <a href="step-2-preparation.html">STEP 2</a>에서 세팅한 녹화 환경이 실제로 동작하는지 확인하는 미션입니다.
-            <strong>예약 시간을 10분 뒤로 임시 변경</strong>해서, 자동 실행 → 자동 녹화 → 종료 후 드라이브 업로드까지 스스로 돌아가는지 확인합니다.
+            <a href="step-2-preparation.html">STEP 2</a>에서 설치한 녹화 도우미로 녹화가 잘 되는지 확인하는 미션입니다.
+            <strong>버튼 하나만 누르면</strong> 되고, 결과는 담당자가 확인할 수 있게 자동으로 제출됩니다.
           </p>
-        </div>
-
-        <div class="alert alert-warn" style="margin:0 0 20px;">
-          <span class="alert-icon">⚠️</span>
-          <span>직접 OBS를 켜서 녹화하면 <strong>예약이 정상 동작하는지 확인할 수 없습니다.</strong> 반드시 예약을 통해 테스트해 주세요.</span>
         </div>
 
         <div class="step-card mission-card">
@@ -144,74 +139,18 @@
               <div class="tl-item">
                 <div class="tl-num">1</div>
                 <div class="tl-body">
-                  <div class="tl-title">예약 시간을 10분 뒤로 임시 변경하고 화면 캡처하기</div>
-                  <div class="tl-desc">
-                    <strong>Windows</strong> : 작업 스케줄러 → 만들어 둔 작업 더블클릭 → '트리거' 탭 → 편집 → 시간을 10분 뒤로, 요일은 <strong>오늘 요일</strong>에 체크<br>
-                    <strong>Mac</strong> : 터미널에서 <code>crontab -e</code> 입력 → 키보드 <strong>i</strong> 키 클릭 → 분, 시, 요일을 오늘 기준 10분 뒤로 수정 → <strong>Esc</strong> → <code>:wq</code> 입력
-                    <br><br><strong style="color:var(--accent2);">설정을 마친 화면(예약 시각이 보이는 화면)을 캡처해서 저장해 두세요.</strong> 7번에서 녹화본과 함께 드라이브에 제출합니다.
-                    <div class="img-row" style="margin-top:12px;align-items:flex-start;">
-                      <div style="flex:1;min-width:0;">
-                        <img src="window_step_trigger.png" alt="Windows 작업 스케줄러 트리거 탭에서 예약 시각 확인" class="step-img" style="width:100%;margin:0;">
-                        <div style="font-size:11.5px;color:var(--text3);margin-top:6px;">🖥 Windows · 작업 스케줄러 &gt; 해당 작업 속성 &gt; <strong>'트리거' 탭</strong></div>
-                      </div>
-                      <div style="flex:1;min-width:0;">
-                        <img src="mac_step_6-2-2.png" alt="Mac crontab 에 예약 시각을 입력한 화면" class="step-img" style="width:100%;margin:0;">
-                        <div style="font-size:11.5px;color:var(--text3);margin-top:6px;">🍎 Mac · 터미널 <code>crontab -e</code> <strong>입력 화면</strong></div>
-                      </div>
-                    </div>
-                  </div>
+                  <div class="tl-title">도우미 창에서 [테스트 녹화 (10초)] 누르기</div>
+                  <div class="tl-desc">10초 동안 <strong>말을 하고, 유튜브 같은 소리를 틀어</strong> 주세요.</div>
                 </div>
               </div>
               <div class="tl-item">
                 <div class="tl-num">2</div>
                 <div class="tl-body">
-                  <div class="tl-title">OBS를 완전히 종료하고 대기</div>
-                  <div class="tl-desc">PC는 켜 둔 채로, 잠금 화면/절전 모드로 들어가지 않도록 해주세요.</div>
-                </div>
-              </div>
-              <div class="tl-item">
-                <div class="tl-num">3</div>
-                <div class="tl-body">
-                  <div class="tl-title">자동 실행·녹화 시작 확인</div>
-                  <div class="tl-desc">설정한 시간에 OBS가 자동으로 실행되고, OBS 하단의 녹화 카운터가 흐르면 성공입니다. 실행/녹화가 되지 않을 경우 <a href="step-2-preparation.html#auto-record-windows">STEP 2의 자동 실행 설정</a>을 다시 확인해 주세요.</div>
-                </div>
-              </div>
-              <div class="tl-item">
-                <div class="tl-num">4</div>
-                <div class="tl-body">
-                  <div class="tl-title">2분 이상 테스트 녹화</div>
-                  <div class="tl-desc">디스코드 음성 채널에서 1) 마이크, 2) 영상·음악 재생(스피커), 3) 화면 공유 또는 캠이 모두 한 번씩 테스트되도록 합니다.</div>
-                </div>
-              </div>
-              <div class="tl-item">
-                <div class="tl-num">5</div>
-                <div class="tl-body">
-                  <div class="tl-title">녹화 종료</div>
-                  <div class="tl-desc">'녹화 중단' 버튼 또는 F9(Mac: fn + F9) 키로 종료합니다.</div>
-                </div>
-              </div>
-              <div class="tl-item">
-                <div class="tl-num">6</div>
-                <div class="tl-body">
-                  <div class="tl-title">드라이브 자동 업로드 확인</div>
-                  <div class="tl-desc">드라이브 앱에서 동기화되어 멘토님 전용 폴더에 파일이 생성되면, <a href="https://drive.google.com/drive/folders/0AFylNpHr4ldbUk9PVA" target="_blank" rel="noopener noreferrer">드라이브 웹</a>에서 <strong>소리 출력과 화면 재생이 정상적인지</strong> 확인합니다.</div>
-                </div>
-              </div>
-              <div class="tl-item">
-                <div class="tl-num">7</div>
-                <div class="tl-body">
-                  <div class="tl-title">1번에서 캡처한 예약 화면을 같은 폴더에 업로드</div>
-                  <div class="tl-desc">녹화본이 올라간 <strong>같은 드라이브 폴더</strong>에 캡처 이미지를 함께 올려 주세요.
-                    <br>OBS 녹화본의 파일명은 <strong>녹화가 시작된 시각</strong>입니다. 이 시각이 캡처해 둔 예약 시각과 맞으면,
-                    수동이 아니라 <strong>예약대로 자동 녹화되었다</strong>는 점이 확인됩니다.</div>
-                </div>
-              </div>
-              <div class="tl-item">
-                <div class="tl-num">8</div>
-                <div class="tl-body">
-                  <div class="tl-title">예약 시간을 실제 멘토링 시간으로 원복 ⚠️</div>
-                  <div class="tl-desc">마지막으로, 테스트용으로 바꿔 둔 예약을 <strong>멘토링이 진행되는 요일의 수업 시작 10분 전</strong>으로 반드시 되돌려 주세요.
-                    <br>이 단계를 놓치면 실제 멘토링 날 녹화가 시작되지 않습니다.</div>
+                  <div class="tl-title">결과 확인</div>
+                  <div class="tl-desc">녹화 파일 · 마이크 · 컴퓨터 소리가 모두 ✓이면 끝입니다. 테스트 녹화는 회사 드라이브에 자동으로 올라가 따로 제출하지 않으셔도 됩니다.
+                    <br>마이크나 컴퓨터 소리가 '조용함'으로 나오면 <a href="step-2-preparation.html#audio-setup">STEP 2 · 오디오 세팅</a>을 확인하고 다시 눌러 주세요.
+                    <img src="recorder-test-result.png" alt="테스트 녹화 결과 — 파일·마이크·컴퓨터 소리 확인" class="step-img" style="margin-top:12px;max-width:420px;">
+                  </div>
                 </div>
               </div>
             </div>
@@ -313,7 +252,7 @@
         <div class="alert alert-accent2">
           <span class="alert-icon">✅</span>
           <span><strong>이 두 가지를 기한 내에 반드시 완료해 주세요.</strong>
-            <br>1. 녹화 테스트 제출 + 예약 시간 원복 (MISSION 1)
+            <br>1. 테스트 녹화 (MISSION 1)
             <br>2. LMS 자기소개 + 디스코드 첫인사 (MISSION 2)
         </div>
 
