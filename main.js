@@ -469,3 +469,94 @@ document.addEventListener('DOMContentLoaded', () => {
   goToHash('auto');
   window.addEventListener('load', () => goToHash('auto'));
 });
+
+/* ── 10. v2 리디자인 보조 (2026-10-30) ──────────
+   단계 진행 표시 · 이 페이지 목차 · 코드 클릭 복사 · 체크리스트 기억
+──────────────────────────────────────────── */
+
+/* 하위 페이지 히어로 아래에 STEP 1~6 진행 표시를 그립니다. */
+function initStepRail() {
+  const hero = document.querySelector('.page-hero');
+  if (!hero) return;
+  const here = currentPage();
+  const steps = SITE_PAGES.filter(p => !p.parent);
+  const activeId = here.parent || here.id;
+  const idx = steps.findIndex(p => p.id === activeId);
+  if (idx < 0) return;
+  const rail = document.createElement('nav');
+  rail.className = 'step-rail';
+  rail.setAttribute('aria-label', '단계 진행');
+  rail.innerHTML = steps.map((p, i) => {
+    const cls = [i < idx ? 'done' : '', i === idx ? 'current' : '', p.mission ? 'mission' : ''].filter(Boolean).join(' ');
+    return '<a href="' + p.file + '"' + (cls ? ' class="' + cls + '"' : '') + (i === idx ? ' aria-current="page"' : '') + '>' +
+      '<span class="sr-num">' + p.label + '</span><span class="sr-title">' + p.title + '</span></a>';
+  }).join('');
+  hero.appendChild(rail);
+}
+
+/* 넓은 화면에서 오른쪽에 '이 페이지' 목차를 띄우고, 읽는 위치를 표시합니다. */
+function initPageToc() {
+  if (document.body.dataset.page === 'home') return;
+  const heads = Array.from(document.querySelectorAll('.main-content h2[id], .main-content .part-hero h2'))
+    .filter(h => !h.closest('.toggle-body'));
+  heads.forEach(h => {
+    if (!h.id) { const sec = h.closest('section[id]'); if (sec) h.dataset.target = sec.id; }
+  });
+  if (heads.length < 2) return;
+  const toc = document.createElement('aside');
+  toc.className = 'page-toc';
+  toc.innerHTML = '<div class="pt-label">이 페이지</div>' + heads.map(h => {
+    const id = h.id || h.dataset.target;
+    return '<a href="#' + id + '">' + escapeHtml(cleanText(h.textContent)) + '</a>';
+  }).join('');
+  document.body.appendChild(toc);
+  const links = Array.from(toc.querySelectorAll('a'));
+  const onScroll = () => {
+    let cur = 0;
+    heads.forEach((h, i) => { if (h.getBoundingClientRect().top < 140) cur = i; });
+    links.forEach((a, i) => a.classList.toggle('active', i === cur));
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+}
+
+/* 코드 블록을 누르면 내용을 복사합니다 (터미널 명령 등). */
+function initCodeCopy() {
+  document.querySelectorAll('.code-block').forEach(el => {
+    el.title = '클릭해서 복사';
+    el.addEventListener('click', () => {
+      const text = el.innerText.trim();
+      const done = () => { el.classList.add('copied'); setTimeout(() => el.classList.remove('copied'), 1600); };
+      if (navigator.clipboard) navigator.clipboard.writeText(text).then(done, () => {});
+    });
+  });
+}
+
+/* 매주 체크리스트를 이 브라우저에 기억합니다(주가 바뀌면 비웁니다). */
+function weekKey() {
+  const d = new Date();
+  const monday = new Date(d.getFullYear(), d.getMonth(), d.getDate() - ((d.getDay() + 6) % 7));
+  return 'bt-mentor-checklist-' + monday.getFullYear() + '-' + (monday.getMonth() + 1) + '-' + monday.getDate();
+}
+function initChecklistMemory() {
+  const items = Array.from(document.querySelectorAll('.check-item'));
+  if (!items.length) return;
+  const key = weekKey();
+  try {
+    const saved = JSON.parse(localStorage.getItem(key) || '[]');
+    saved.forEach(i => items[i] && items[i].classList.add('done'));
+  } catch (_) { /* 저장소를 못 쓰면 기억만 안 됩니다 */ }
+  items.forEach(el => el.addEventListener('click', () => {
+    try {
+      localStorage.setItem(key, JSON.stringify(items.map((x, i) => x.classList.contains('done') ? i : -1).filter(i => i >= 0)));
+    } catch (_) {}
+  }));
+  updateProgress();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  initStepRail();
+  initPageToc();
+  initCodeCopy();
+  initChecklistMemory();
+});
